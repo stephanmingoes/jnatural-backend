@@ -48,7 +48,9 @@ export async function employeeMiddleware(req, res, next) {
 
   try {
     const data = await jwt.verify(token, process.env.TOKEN_SECRET);
-    if (data?.role !== roles[1] || data?.role !== roles[0]) {
+
+    if (data?.role == roles[0]) return next();
+    if (data?.role !== roles[1]) {
       return res.status(403).json({ message: "User not authorized" });
     }
     req.body.user = data;

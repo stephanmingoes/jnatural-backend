@@ -19,7 +19,7 @@ export async function createProduct(req, res) {
     return res.status(200).json({ message: "Product created successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
 
@@ -33,7 +33,7 @@ export async function getProducts(req, res) {
       .json({ message: "Products fetched successfully", data: products });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
 // Get single product
@@ -46,7 +46,7 @@ export async function getProduct(req, res) {
       .json({ message: "Product fetched successfully", data: product });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
 
@@ -57,7 +57,7 @@ export async function updateProduct(req, res) {
     return res.status(200).json({ message: "Product updated successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
 
@@ -68,6 +68,6 @@ export async function deleteProduct(req, res) {
     return res.status(200).json({ message: "Product deleted successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }

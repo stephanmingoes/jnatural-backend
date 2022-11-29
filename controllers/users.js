@@ -31,7 +31,7 @@ export async function signup(req, res) {
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
 export async function login(req, res) {
@@ -77,6 +77,6 @@ export async function login(req, res) {
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: "Internal server error" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 }
