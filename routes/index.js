@@ -45,6 +45,9 @@ router.post(
 );
 // Owner, User, Employee get all products
 router.get("/getProducts", MiddleWare.normalMiddleware, Product.getProducts);
+
+// Owner, User, Employee get single  products
+router.get("/getProduct/:id", MiddleWare.normalMiddleware, Product.getProduct);
 // Owner Updates a product
 router.patch(
   "/updateProduct/:id",
@@ -54,7 +57,7 @@ router.patch(
 
 // Owner deletes a product
 router.delete(
-  "/deleteProduct",
+  "/deleteProduct/:id",
   MiddleWare.ownerMiddleware,
   Product.deleteProduct
 );
