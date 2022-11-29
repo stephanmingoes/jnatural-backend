@@ -71,6 +71,7 @@ export async function login(req, res) {
       data: {
         name: existingUser.name,
         email: existingUser.email,
+        role: existingUser.role,
         id: existingUser._id,
         token: token,
       },
