@@ -1,4 +1,4 @@
-import { User } from "../models/index.js";
+import { User } from "../Dao/index.js";
 import validator from "validator";
 import jsonwebtoken from "jsonwebtoken";
 import bcrypt from "bcrypt";

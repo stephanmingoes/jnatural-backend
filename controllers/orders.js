@@ -1,4 +1,4 @@
-import { Order } from "../models/index.js";
+import { Order } from "../Dao/index.js";
 import mongoose from "mongoose";
 
 // Create a order

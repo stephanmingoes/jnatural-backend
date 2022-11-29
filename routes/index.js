@@ -3,7 +3,7 @@ const router = express.Router();
 import * as User from "../controllers/users.js";
 import * as Order from "../controllers/orders.js";
 import * as MiddleWare from "../middlewares/index.js";
-import * as Product from "../controllers/products.js";
+import * as Product from "../controllers/inventory.js";
 
 // User Related Stuff //
 

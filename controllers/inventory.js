@@ -1,4 +1,4 @@
-import { Product } from "../models/index.js";
+import { Product } from "../Dao/index.js";
 
 // Create a product
 export async function createProduct(req, res) {
