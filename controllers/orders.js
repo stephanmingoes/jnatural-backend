@@ -54,7 +54,7 @@ export async function getUserOrders(req, res) {
   try {
     const orders = await Order.find({
       user: mongoose.Types.ObjectId(req.user.id),
-    }).populate("user");
+    }).populate(["user", "product"]);
 
     return res
       .status(200)
