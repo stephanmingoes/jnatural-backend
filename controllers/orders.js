@@ -1,4 +1,4 @@
-import { Order } from "../Dao/index.js";
+import { Order, Product } from "../Dao/index.js";
 import mongoose from "mongoose";
 
 // Create a order
@@ -9,6 +9,10 @@ export async function createOrder(req, res) {
       return res.status(400).json({ message: "Fill all fields" });
 
     await Order.create({ product, user: req.user.id, status, amount, cost });
+    const existingProduct = await Product.findOne({ _id: product });
+    await Product.findByIdAndUpdate(product, {
+      quantity: existingProduct.quantity - 1,
+    });
 
     return res.status(201).json({ message: "Order created successfully" });
   } catch (error) {
