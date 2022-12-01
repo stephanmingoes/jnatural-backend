@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 import { orderStatus, roles } from "../constants/index.js";
 
 const UserSchema = new mongoose.Schema({
-  name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   role: { type: String, enum: roles, required: true },
   password: { type: String, required: true },

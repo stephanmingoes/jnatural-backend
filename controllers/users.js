@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 export async function signup(req, res) {
   try {
-    let { name, email, role, password } = req.body;
+    let { email, role, password } = req.body;
 
     email = email.toLowerCase().trim();
 
@@ -20,7 +20,6 @@ export async function signup(req, res) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await User.create({
-      name,
       email,
       role,
       password: hashedPassword,
@@ -58,7 +57,6 @@ export async function login(req, res) {
     const token = jsonwebtoken.sign(
       {
         email: existingUser.email,
-        name: existingUser.name,
         id: existingUser._id,
         role: existingUser.role,
       },
@@ -69,7 +67,6 @@ export async function login(req, res) {
     res.status(200).json({
       message: "User logged in successfully.",
       data: {
-        name: existingUser.name,
         email: existingUser.email,
         role: existingUser.role,
         id: existingUser._id,
